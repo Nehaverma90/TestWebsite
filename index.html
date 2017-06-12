@@ -52,11 +52,7 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
     console.log('Now you may run code which should be executed once user gets successfully subscribed.');
 }
   </script>    
-   <script type="text/javascript">
-  if(pushcrew.isAPIReady) {
-    getDetails();
-  }
-  </script>
+   
 </head>
 <body>  
 <h1>Telenor Demo</h1>
@@ -64,6 +60,11 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
   
 <div id=pushcrew></div>
 <div id="details"></div>
+  <script type="text/javascript">
+  if(pushcrew.isAPIReady) {
+    getDetails();
+  }
+  </script>
 </body>
   
 </html>
