@@ -20,8 +20,6 @@ txt +="<p>OS description: " + platform.description+ "</p>";
 txt +="<p>IP Address: " + userip + "</p>";
 var title = document.getElementById('details');
 title.innerHTML = txt;
-window._pcq = window._pcq || [];
-_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 }
 </script> 
   
@@ -37,6 +35,10 @@ _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscriptio
         h.parentNode.insertBefore(s,h);
       
     })(window,document);
+  
+  window._pcq = window._pcq || [];
+_pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
+
 </script>
   <script type="text/javascript">
   
@@ -50,21 +52,14 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
     console.log(values.message) // 'User has subscribed to push notifications.' or 'User is already subscribed to push notifications.'
 
     console.log('Now you may run code which should be executed once user gets successfully subscribed.');
+  getDetails();
+  
 }
-  </script>    
-   
+</script>    
 </head>
 <body>  
 <h1>Telenor Demo</h1>
-
-  
 <div id=pushcrew></div>
 <div id="details"></div>
-  <script type="text/javascript">
-  if(pushcrew.isAPIReady) {
-    getDetails();
-  }
-  </script>
 </body>
-  
 </html>
