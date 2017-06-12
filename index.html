@@ -11,22 +11,41 @@
 
 <script type="text/javascript">
 function getDetails(){
-  
-  
-console.log(platform.name); // 'IE'
-console.log(platform.version); // '10.0'
+  var d = new Date();
+var txt = "<p>Date: " + d.toUTCString() + "</p>";
 
-console.log(platform.description); // 'Safari 5.1 on Apple iPad (iOS 5.0)'
+  
+platform.name; // 'IE'
+platform.version; // '10.0'
+platform.layout; // 'Trident'
+platform.os; // 'Windows Server 2008 R2 / 7 x64'
+platform.description; // 'IE 10.0 x86 (platform preview; running in IE 7 mode) on Windows Server 2008 R2 / 7 x64'
+
+// or on an iPad
+platform.name; // 'Safari'
+platform.version; // '5.1'
+platform.product; // 'iPad'
+platform.manufacturer; // 'Apple'
+platform.layout; // 'WebKit'
+platform.os; // 'iOS 5.0'
+platform.description; // 'Safari 5.1 on Apple iPad (iOS 5.0)'
 
 // or parsing a given UA string
 var info = platform.parse('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7.2; en; rv:2.0) Gecko/20100101 Firefox/4.0 Opera 11.52');
-console.log(info.name); // 'Opera'
-console.log(info.version); // '11.52'
-console.log(info.layout); // 'Presto'
-console.log(info.os); // 'Mac OS X 10.7.2'
-console.log(info.description); // 'Opera 11.52 (identifying
+info.name; // 'Opera'
+info.version; // '11.52'
+info.layout; // 'Presto'
+info.os; // 'Mac OS X 10.7.2'
+info.description; // 'Opera 11.52 (identifying as Firefox 4.0) on Mac OS X 10.7.2'
+txt +="<p>OS name: " + info.name + "</p>";
+txt +="<p>OS version: " + info.version +"</p>";
+txt +="<p>OS layout: " + info.layout + "</p>";
+txt +="<p>OS: " + info.os + "</p>";
+txt +="<p>IP Address: " + userip + "</p>";
+var title = document.getElementById('details');
 
 if(pushcrew.isAPIReady) {
+  getDetails();
   var sub =  pushcrew.subscriberId; 
   var push_div = document.getElementById('pushcrew');
   if(sub === false){
