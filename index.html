@@ -43,7 +43,7 @@ txt +="<p>OS layout: " + info.layout + "</p>";
 txt +="<p>OS: " + info.os + "</p>";
 txt +="<p>IP Address: " + userip + "</p>";
 var title = document.getElementById('details');
-
+title.innerHTML = txt;
 if(pushcrew.isAPIReady) {
   
   var sub =  pushcrew.subscriberId; 
