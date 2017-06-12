@@ -10,11 +10,8 @@
 <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
 
 <script type="text/javascript">
-  
- 
-  
 function getDetails(){
-  var d = new Date();
+var d = new Date();
 var txt = "<p>Date: " + d.toUTCString() + "</p>";
 txt +="<p>OS name: " + platform.name + "</p>";
 txt +="<p>OS version: " + platform.version; +"</p>";
@@ -23,12 +20,8 @@ txt +="<p>OS description: " + platform.description+ "</p>";
 txt +="<p>IP Address: " + userip + "</p>";
 var title = document.getElementById('details');
 title.innerHTML = txt;
-   if(pushcrew.isAPIReady) {
-    getDetails();
-  }
- window._pcq = window._pcq || [];
+window._pcq = window._pcq || [];
 _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
-
 }
 </script> 
   
@@ -48,7 +41,7 @@ _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscriptio
   <script type="text/javascript">
   
 function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
-      console.log('User got successfully subscribed.');
+     console.log('User got successfully subscribed.');
 
     console.log(subscriberId); //will output the user's subscriberId
 
@@ -58,8 +51,12 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
 
     console.log('Now you may run code which should be executed once user gets successfully subscribed.');
 }
+  </script>    
+   <script type="text/javascript">
+  if(pushcrew.isAPIReady) {
+    getDetails();
+  }
   </script>
-  
 </head>
 <body>  
 <h1>Telenor Demo</h1>
