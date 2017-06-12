@@ -13,30 +13,6 @@
 function getDetails(){
   var d = new Date();
 var txt = "<p>Date: " + d.toUTCString() + "</p>";
-
-  
-platform.name; // 'IE'
-platform.version; // '10.0'
-platform.layout; // 'Trident'
-platform.os; // 'Windows Server 2008 R2 / 7 x64'
-platform.description; // 'IE 10.0 x86 (platform preview; running in IE 7 mode) on Windows Server 2008 R2 / 7 x64'
-
-// or on an iPad
-platform.name; // 'Safari'
-platform.version; // '5.1'
-platform.product; // 'iPad'
-platform.manufacturer; // 'Apple'
-platform.layout; // 'WebKit'
-platform.os; // 'iOS 5.0'
-platform.description; // 'Safari 5.1 on Apple iPad (iOS 5.0)'
-
-// or parsing a given UA string
-var info = platform.parse('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7.2; en; rv:2.0) Gecko/20100101 Firefox/4.0 Opera 11.52');
-info.name; // 'Opera'
-info.version; // '11.52'
-info.layout; // 'Presto'
-info.os; // 'Mac OS X 10.7.2'
-info.description; // 'Opera 11.52 (identifying as Firefox 4.0) on Mac OS X 10.7.2'
 txt +="<p>OS name: " + platform.name + "</p>";
 txt +="<p>OS version: " + platform.version; +"</p>";
 txt +="<p>OS layout: " + platform.layout + "</p>";
@@ -44,8 +20,29 @@ txt +="<p>OS description: " + platform.description+ "</p>";
 txt +="<p>IP Address: " + userip + "</p>";
 var title = document.getElementById('details');
 title.innerHTML = txt;
+}
+</script> 
   
-window._pcq = window._pcq || [];
+<script type="text/javascript">
+    (function(p,u,s,h){
+        p._pcq=p._pcq||[];
+        p._pcq.push(['_currentTime',Date.now()]);
+        s=u.createElement('script');
+        s.type='text/javascript';
+        s.async=true;
+        s.src='https://cdn.pushcrew.com/js/a72168dd71f6b0369df9033ed3325aa7.js';
+        h=u.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(s,h);
+      getsubscriberId();
+    })(window,document);
+</script>
+  <script type="text/javascript">
+    function getsubscriberId()
+    {
+      
+      
+if(pushcrew.isAPIReady) {
+    window._pcq = window._pcq || [];
 _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 
 function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
@@ -60,20 +57,7 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
     console.log('Now you may run code which should be executed once user gets successfully subscribed.');
 }
 }
-</script> 
-  
-<script type="text/javascript">
-    (function(p,u,s,h){
-        p._pcq=p._pcq||[];
-        p._pcq.push(['_currentTime',Date.now()]);
-        s=u.createElement('script');
-        s.type='text/javascript';
-        s.async=true;
-        s.src='https://cdn.pushcrew.com/js/a72168dd71f6b0369df9033ed3325aa7.js';
-        h=u.getElementsByTagName('script')[0];
-        h.parentNode.insertBefore(s,h);
-    })(window,document);
-</script>
+  </script>
   
 </head>
 <body>  
@@ -84,4 +68,3 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
 </body>
   
 </html>
-Contact GitHub API Training Shop Blog About
