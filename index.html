@@ -11,9 +11,7 @@
 
 <script type="text/javascript">
   
-  if(pushcrew.isAPIReady) {
-    getDetails();
-  }
+ 
   
 function getDetails(){
   var d = new Date();
@@ -25,7 +23,9 @@ txt +="<p>OS description: " + platform.description+ "</p>";
 txt +="<p>IP Address: " + userip + "</p>";
 var title = document.getElementById('details');
 title.innerHTML = txt;
-  
+   if(pushcrew.isAPIReady) {
+    getDetails();
+  }
  window._pcq = window._pcq || [];
 _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 
