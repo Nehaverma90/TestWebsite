@@ -37,10 +37,13 @@ info.version; // '11.52'
 info.layout; // 'Presto'
 info.os; // 'Mac OS X 10.7.2'
 info.description; // 'Opera 11.52 (identifying as Firefox 4.0) on Mac OS X 10.7.2'
-txt +="<p>OS name: " + info.name + "</p>";
-txt +="<p>OS version: " + info.version +"</p>";
+txt +="<p>OS name: " + platform.name + "</p>";
+txt +="<p>OS version: " + platform.version; +"</p>";
 txt +="<p>OS layout: " + info.layout + "</p>";
-txt +="<p>OS: " + info.os + "</p>";
+txt +="<p>OS: " + platform.product+ "</p>";
+  txt +="<p>OS: " + platform.manufacturer + "</p>";
+  txt +="<p>OS: " + platform.layout+ "</p>";
+  txt +="<p>OS: " + platform.description+ "</p>";
 txt +="<p>IP Address: " + userip + "</p>";
 var title = document.getElementById('details');
 title.innerHTML = txt;
