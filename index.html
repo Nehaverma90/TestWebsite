@@ -43,6 +43,8 @@ _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscriptio
   <script type="text/javascript">
   
 function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
+  
+  getDetails();
     console.log('User got successfully subscribed.');
 
     console.log(subscriberId); //will output the user's subscriberId
@@ -58,7 +60,7 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
 </head>
 <body>  
 <h1>Telenor Demo</h1>
-<input type="submit" id="byBtn" value="Get Details" onclick="getDetails()"/>
+
   
 <div id=pushcrew></div>
 <div id="details"></div>
