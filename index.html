@@ -33,16 +33,13 @@ title.innerHTML = txt;
         s.src='https://cdn.pushcrew.com/js/a72168dd71f6b0369df9033ed3325aa7.js';
         h=u.getElementsByTagName('script')[0];
         h.parentNode.insertBefore(s,h);
-      getsubscriberId();
+      
     })(window,document);
 </script>
   <script type="text/javascript">
-    function getsubscriberId()
-    {
+   
       
-      
-if(pushcrew.isAPIReady) {
-    window._pcq = window._pcq || [];
+window._pcq = window._pcq || [];
 _pcq.push(['subscriptionSuccessCallback',callbackFunctionOnSuccessfulSubscription]); //registers callback function to be called when user gets successfully subscribed
 
 function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
@@ -55,8 +52,6 @@ function callbackFunctionOnSuccessfulSubscription(subscriberId, values) {
     console.log(values.message) // 'User has subscribed to push notifications.' or 'User is already subscribed to push notifications.'
 
     console.log('Now you may run code which should be executed once user gets successfully subscribed.');
-}
-}
   </script>
   
 </head>
