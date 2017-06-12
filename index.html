@@ -11,25 +11,21 @@
 
 <script type="text/javascript">
 function getDetails(){
-var d = new Date();
-var txt = "<p>Date: " + d.toUTCString() + "</p>";
-var parser = new UAParser();
-//var uastring = "Mozilla/5.0 (Linux; U; Android 4.0.3; ko-kr; LG-L160L Build/IML74K) AppleWebkit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30";
-var uastring = navigator.userAgent;
-parser.setUA(uastring);
-var result = parser.getResult();
-//txt += "<p>User-agent header: " + navigator.userAgent + "</p>";
-txt +="<p>OS: " + result.os.name + "</p>";
-txt +="<p>OS version: " + result.os.version +"</p>";
-txt +="<p>Browser: " + result.browser.name + "</p>";
-txt +="<p>Browser Version: " + result.browser.version + "</p>";
-txt +="<p>Device Vendor: " + result.device.vendor + "</p>";
-txt +="<p>Device Type: " + result.device.type  + "</p>";
-txt +="<p>Device Model: " + result.device.model + "</p>";
-txt +="<p>IP Address: " + userip + "</p>";
-var title = document.getElementById('details');
-title.innerHTML = txt;
   
+  
+console.log(platform.name); // 'IE'
+console.log(platform.version); // '10.0'
+
+console.log(platform.description); // 'Safari 5.1 on Apple iPad (iOS 5.0)'
+
+// or parsing a given UA string
+var info = platform.parse('Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7.2; en; rv:2.0) Gecko/20100101 Firefox/4.0 Opera 11.52');
+console.log(info.name); // 'Opera'
+console.log(info.version)console.log(; // '11.52'
+console.log(info.layout); // 'Presto'
+console.log(info.os); // 'Mac OS X 10.7.2'
+console.log(info.description); // 'Opera 11.52 (identifying
+
 if(pushcrew.isAPIReady) {
   var sub =  pushcrew.subscriberId; 
   var push_div = document.getElementById('pushcrew');
