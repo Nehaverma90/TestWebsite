@@ -25,7 +25,7 @@ txt +="<p>susbcriber id: " + pushcrew.subscriberId + "</p>";
 
 var md = new MobileDetect(window.navigator.userAgent);
   
-  if(md.os()!= "" || md.os()!= null){
+  if(md.os()!= "" && md.os()!= null){
 txt +="<p>Device Type Mobile: " +  md.os()+ "</p>";
   }
   else {
