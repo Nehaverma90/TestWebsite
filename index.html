@@ -23,7 +23,8 @@ txt +="<p>OS description: " + platform.description+ "</p>";
 txt +="<p>IP Address: " + userip + "</p>";
 txt +="<p>susbcriber id: " + pushcrew.subscriberId + "</p>"; 
 txt +="<p>Platform: " + navigator.platform + "</p>"; 
-
+var md = new MobileDetect(window.navigator.userAgent);
+txt +="<p>Mobile or Desktop: " +  md.os()+ "</p>";
 
 var title = document.getElementById('details');
 title.innerHTML = txt;
