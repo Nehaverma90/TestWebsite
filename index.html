@@ -23,10 +23,10 @@ txt +="<p>susbcriber id: " + pushcrew.subscriberId + "</p>";
 var md = new MobileDetect(window.navigator.userAgent);
   
   if(md.os()!= "" && md.os()!= null){
-txt +="<p>Device Type Mobile: " +  md.os()+ "</p>";
+txt +="<p>Device Type: Mobile " +  md.os()+ "</p>";
   }
   else {
-    txt +="<p>Device Type Desktop: " + navigator.platform + "</p>"; 
+    txt +="<p>Device Type: Desktop " + navigator.platform + "</p>"; 
   }
   
 var title = document.getElementById('details');
